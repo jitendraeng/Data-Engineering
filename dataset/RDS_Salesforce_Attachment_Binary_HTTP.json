@@ -1,0 +1,22 @@
+{
+	"name": "RDS_Salesforce_Attachment_Binary_HTTP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RLS_Salesforce_HTTP",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"AttachmentId": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "@concat('/services/data/v52.0/sobjects/ContentVersion/', dataset().AttachmentId, '/VersionData')"
+			}
+		}
+	}
+}
